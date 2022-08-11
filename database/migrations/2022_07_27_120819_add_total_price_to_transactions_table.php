@@ -25,8 +25,6 @@ class AddTotalPriceToTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropColumn('total_price');
-        });
+        Schema::dropIfExist('transactions');
     }
 }
